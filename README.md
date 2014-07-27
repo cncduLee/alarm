@@ -1,15 +1,16 @@
 #开发说明
 
+##测试说明
+
+    命令行：mvn test
+
 ##项目结构
 	
 	alarm-platform/
-		* biz           业务逻辑层
-		* common        通用的基础实体
-		* emit 		    发射器
-		* facade  		对外接口
-		* monitor  		监控 
+		* code          通用的基础实体
+		* service  		对外接口
 		* mq            自定义的消息中间件
-		* standalone    发布配置
+		* send          消息发送处理
 		* third         依赖接入【解决耦合】
 		* test          测试
 		
