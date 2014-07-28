@@ -1,12 +1,19 @@
 #开发说明
 
-##测试说明
+##安装说明
 
-    命令行：mvn test
+    下载：git clone https://github.com/cncduLee/alarm.git
+    构建eclipse工程:  mvn eclipse:eclipse
+    构建idea工程:     mvn idea:idea
+    
+    
+##使用说明
+
+    命令行：mvn clean test
 
 ##项目结构
 	
-	alarm-platform/
+	alarm/
 		* code          通用的基础实体
 		* service  		对外接口
 		* mq            自定义的消息中间件
@@ -21,6 +28,7 @@
     Spring-context
     Spring-test
     junit
+    slf4j
     
 ##扩展说明
 
