@@ -26,20 +26,30 @@
 
 ###如:添加微信发送方式：
     1：对外部以来的扩展方式进行适配,做法是:在emit(发送器)部分添加适配WxSender.java
-        public class WxSender extends BaseSender{
-            public WxSender() {
-                super();
-            }
-        
-            @Override
-            protected void thirdSend(String content, String calling) {
-                WxUtils.getInstance().sendMessage(content, calling);
-            }
-        }
-    2: 定义优先级规则：在rule.properties加入
-       WX=2 
-    3：添加enum，定义发送选项
-       WX(1,"微信","wx"),//微信
+        @Service("smsSender")
+	public class SmsSender implements Sender {
+	    @Override
+	    public void send(String content, String calling) {
+	        SmsUtils.getInstance().sendMessage(content, calling);
+	    }
+	}
+    2: 定义优先级规则以及消息类型：如短信，
+       public class SmsType extends MessageType{
+	
+	    public SmsType() {
+	        super();
+	    }
+	
+	    @Override
+	    public String setName() {
+	        return "sms";
+	    }
+	
+	    @Override
+	    public int setPriority() {
+	        return -1;
+	    }
+	}
        
 ##设计思路
    
