@@ -16,5 +16,5 @@ public class EmailUtils {
     }
 
     public void sendMessage(String content,String calling){
-        System.out.println(Thread.currentThread().getName() +"【发送短信："+System.currentTimeMillis()+"】---->>>>（联系人:"+calling+"----->>>>报警内容："+content);    }
+        System.out.println(Thread.currentThread().getName() +"【发送邮件："+System.currentTimeMillis()+"】---->>>>（联系人:"+calling+"----->>>>报警内容："+content);    }
 }
