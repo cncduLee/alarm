@@ -1,3 +1,4 @@
+import code.EmailType;
 import code.Message;
 import code.SmsType;
 import org.junit.Before;
@@ -44,7 +45,7 @@ public class Test {
             if(a % 2 == 0){
                 message.setType(new SmsType());
             }else if(a % 2 == 1){
-                message.setType(new SmsType());
+                message.setType(new EmailType());
             }
             alarmService.send(message);
         }
